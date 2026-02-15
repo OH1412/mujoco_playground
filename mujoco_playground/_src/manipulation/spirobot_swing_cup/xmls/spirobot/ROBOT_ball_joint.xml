@@ -1,0 +1,533 @@
+<?xml version="1.0" ?>
+<mujoco model="jaka_zu5_ball_hand">
+  <compiler angle="radian" meshdir="meshes/"/>
+  <option timestep="0.002" iterations="50" solver="Newton" gravity="0 0 -9.81"/>
+  <asset>
+    <mesh name="Link_00" content_type="model/stl" file="Link_00.STL"/>
+    <mesh name="Link_01" content_type="model/stl" file="Link_01.STL"/>
+    <mesh name="Link_02" content_type="model/stl" file="Link_02.STL"/>
+    <mesh name="Link_03" content_type="model/stl" file="Link_03.STL"/>
+    <mesh name="Link_04" content_type="model/stl" file="Link_04.STL"/>
+    <mesh name="Link_05" content_type="model/stl" file="Link_05.STL"/>
+    <mesh name="Link_06" content_type="model/stl" file="Link_06.STL"/>
+    <mesh name="base_link" content_type="model/stl" file="base_link.STL" scale="3 3 3"/>
+    <mesh name="link1_z" content_type="model/stl" file="link1_z.STL" scale="3 3 3"/>
+    <mesh name="link2_z" content_type="model/stl" file="link2_z.STL" scale="3 3 3"/>
+    <mesh name="link3_z" content_type="model/stl" file="link3_z.STL" scale="3 3 3"/>
+    <mesh name="link4_z" content_type="model/stl" file="link4_z.STL" scale="3 3 3"/>
+    <mesh name="link5_z" content_type="model/stl" file="link5_z.STL" scale="3 3 3"/>
+    <mesh name="link6_z" content_type="model/stl" file="link6_z.STL" scale="3 3 3"/>
+    <mesh name="link7_z" content_type="model/stl" file="link7_z.STL" scale="3 3 3"/>
+    <mesh name="link8_z" content_type="model/stl" file="link8_z.STL" scale="3 3 3"/>
+    <mesh name="link9_z" content_type="model/stl" file="link9_z.STL" scale="3 3 3"/>
+    <mesh name="link10_z" content_type="model/stl" file="link10_z.STL" scale="3 3 3"/>
+    <mesh name="link11_z" content_type="model/stl" file="link11_z.STL" scale="3 3 3"/>
+    <mesh name="link12_z" content_type="model/stl" file="link12_z.STL" scale="3 3 3"/>
+    <mesh name="link13_z" content_type="model/stl" file="link13_z.STL" scale="3 3 3"/>
+    <mesh name="link14_z" content_type="model/stl" file="link14_z.STL" scale="3 3 3"/>
+    <mesh name="link15_z" content_type="model/stl" file="link15_z.STL" scale="3 3 3"/>
+    <mesh name="link16_z" content_type="model/stl" file="link16_z.STL" scale="3 3 3"/>
+    <mesh name="link17_z" content_type="model/stl" file="link17_z.STL" scale="3 3 3"/>
+    <mesh name="link18_z" content_type="model/stl" file="link18_z.STL" scale="3 3 3"/>
+    <mesh name="link19_z" content_type="model/stl" file="link19_z.STL" scale="3 3 3"/>
+  </asset>
+  <worldbody>
+    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.84706 0.84706 0.84706 1" mesh="Link_00"/>
+    <geom type="mesh" rgba="0.84706 0.84706 0.84706 1" mesh="Link_00"/>
+    <body name="Link_1" pos="0 0 0.12015">
+      <inertial pos="-2.5186e-07 0.0033226 -0.001509" quat="1 0.00056994 2.2456e-05 6.30952e-05" mass="15.135" diaginertia="0.044302 0.043091 0.030523"/>
+      <joint name="joint_1" pos="0 0 0" axis="0 0 1" range="-6.28 6.28" actuatorfrcrange="-2000 2000" damping="10"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.84706 0.84706 0.84706 1" mesh="Link_01"/>
+      <geom type="mesh" rgba="0.84706 0.84706 0.84706 1" mesh="Link_01"/>
+      <body name="Link_2" quat="0.707105 0.707108 0 0">
+        <inertial pos="0.215 6.4325e-09 -0.14315" quat="0.5 0.5 0.5 0.5" mass="45.847" diaginertia="1.5964 1.5689 0.10377"/>
+        <joint name="joint_2" pos="0 0 0" axis="0 0 1" range="-1.48 4.62" actuatorfrcrange="-5000 5000" damping="10"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.84706 0.84706 0.84706 1" mesh="Link_02"/>
+        <geom type="mesh" rgba="0.84706 0.84706 0.84706 1" mesh="Link_02"/>
+        <body name="Link_3" pos="0.43 0 0">
+          <inertial pos="0.19087 -1.1862e-05 -0.010587" quat="0.514252 0.485324 0.485304 0.514282" mass="18.069" diaginertia="0.41632 0.412021 0.0207552"/>
+          <joint name="joint_3" pos="0 0 0" axis="0 0 1" range="-3.05 3.05" actuatorfrcrange="-5000 5000" damping="10"/>
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.84706 0.84706 0.84706 1" mesh="Link_03"/>
+          <geom type="mesh" rgba="0.84706 0.84706 0.84706 1" mesh="Link_03"/>
+          <body name="Link_4" pos="0.3685 -1.185e-05 -0.114">
+            <inertial pos="-2.1345e-06 -0.0058004 0.0026717" quat="0.699182 0.714944 2.86648e-05 -8.42093e-06" mass="5.5525" diaginertia="0.0092564 0.00897016 0.00522324"/>
+            <joint name="joint_4" pos="0 0 0" axis="0 0 1" range="-1.48 4.62" actuatorfrcrange="-2000 2000" damping="10"/>
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.84706 0.84706 0.84706 1" mesh="Link_04"/>
+            <geom type="mesh" rgba="0.84706 0.84706 0.84706 1" mesh="Link_04"/>
+            <body name="Link_5" pos="0 -0.1135 0" quat="0.707105 0.707108 0 0">
+              <inertial pos="-2.0304e-06 -0.0028889 -0.0023424" quat="0.709446 0.70476 -1.15346e-05 9.23912e-07" mass="6.3339" diaginertia="0.012993 0.0127003 0.0058451"/>
+              <joint name="joint_5" pos="0 0 0" axis="0 0 1" range="-6.28 6.28" actuatorfrcrange="-3000 3000" damping="10"/>
+              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.84706 0.84706 0.84706 1" mesh="Link_05"/>
+              <geom type="mesh" rgba="0.84706 0.84706 0.84706 1" mesh="Link_05"/>
+              <body name="Link_6" pos="0 0.107 0" quat="0.707105 -0.707108 0 0">
+                <inertial pos="3.71431e-05 -2.5631e-05 -0.021126" quat="-0.0433678 0.70479 0.0460585 0.70659" mass="1.42148" diaginertia="0.00113407 0.000730342 0.000725149"/>
+                <!-- 原joint_6为旋转关节，因驱动器控制不稳定暂时禁用 -->
+                <!-- <joint name="joint_6" pos="0 0 0" axis="0 0 1" range="-6.28 6.28" actuatorfrcrange="-1000 1000" damping="10"/> -->
+                <!-- XY平面等边三角形，边长0.07m -->
+                <site name="tendon_0_a_site" pos="0 0.040415 0.038" size="0.001" rgba="0 0 0 1"/>
+                <site name="tendon_0_b_site" pos="0.035 -0.020007 0.038" size="0.001" rgba="0 0 0 1"/>
+                <site name="tendon_0_c_site" pos="-0.035 -0.020007 0.038" size="0.001" rgba="0 0 0 1"/>
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.84706 0.84706 0.84706 1" mesh="Link_06"/>
+                <geom type="mesh" rgba="0.84706 0.84706 0.84706 1" mesh="Link_06"/>
+                <!-- 灵巧手 base_link（cable_base）-->
+                <!-- URDF中 jaka_to_flex_bridge 关节的 rpy="0 1.5708 0"，转换为 quat -->
+                <body name="cable_base" pos="0 0 0" quat="0.707105 0 0.707108 0">
+                  <!-- 惯量位置修正为base_link几何中心 (scale=3后) -->
+                  <inertial pos="-0.020804 0.007170 0.000002" quat="1 0 0 0" mass="0.123563" diaginertia="9.973885e-05 5.979546e-05 6.269368e-05"/>
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="base_link"/>
+                  <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="base_link"/>
+                  <!-- 灵巧手：使用球关节代替原来的XYZ三关节 -->
+                  <!-- 第1段 -->
+                  <!-- URDF中 joint1_x 的 origin xyz="-0.0461431670619741 0 0"，在cable_base旋转后的坐标系中 -->
+                  <body name="finger_seg1" pos="-0.0461432 0 0" quat="1 0 0 0">
+                  <inertial pos="-0.011946 5.60002e-06 5.38749e-07" quat="0.5 0.5 0.5 0.5" mass="0.650000" diaginertia="4.800000e-04 3.600000e-04 3.600000e-04"/>
+                  <joint name="joint_ball_1" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                  <!-- 前三角形 (X = -0.03) -->
+                  <site name="tendon_1_a_front_site" pos="-0.057058 0.037239 0.000000" size="0.001" rgba="0 0 0 1"/>
+                  <site name="tendon_1_b_front_site" pos="-0.057058 -0.018620 0.032250" size="0.001" rgba="0 0 0 1"/>
+                  <site name="tendon_1_c_front_site" pos="-0.057058 -0.018620 -0.032250" size="0.001" rgba="0 0 0 1"/>
+                  <!-- 后三角形 (X = 0.03) -->
+                  <site name="tendon_1_a_back_site" pos="-0.018106 0.037239 0.000000" size="0.001" rgba="0 0 0 1"/>
+                  <site name="tendon_1_b_back_site" pos="-0.018106 -0.018620 0.032250" size="0.001" rgba="0 0 0 1"/>
+                  <site name="tendon_1_c_back_site" pos="-0.018106 -0.018620 -0.032250" size="0.001" rgba="0 0 0 1"/>
+                  <geom type="sphere" size="0.024" rgba="0.792157 0.819608 0.933333 1"/>
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link1_z"/>
+                  <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link1_z"/>
+                  <!-- 第2段 -->
+                  <body name="finger_seg2" pos="-0.0658525 0 0">
+                    <inertial pos="-0.0111058 1.37745e-06 5.35583e-07" quat="0.5 0.5 0.5 0.5" mass="0.521215" diaginertia="3.446645e-04 2.584984e-04 2.584984e-04"/>
+                    <joint name="joint_ball_2" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                    <!-- 前三角形 (X = -0.03) -->
+                    <site name="tendon_2_a_front_site" pos="-0.053000 0.034930 0.000000" size="0.001" rgba="0 0 0 1"/>
+                    <site name="tendon_2_b_front_site" pos="-0.053000 -0.017465 0.030250" size="0.001" rgba="0 0 0 1"/>
+                    <site name="tendon_2_c_front_site" pos="-0.053000 -0.017465 -0.030250" size="0.001" rgba="0 0 0 1"/>
+                    <!-- 后三角形 (X = 0.03) -->
+                    <site name="tendon_2_a_back_site" pos="-0.017000 0.034930 0.000000" size="0.001" rgba="0 0 0 1"/>
+                    <site name="tendon_2_b_back_site" pos="-0.017000 -0.017465 0.030250" size="0.001" rgba="0 0 0 1"/>
+                    <site name="tendon_2_c_back_site" pos="-0.017000 -0.017465 -0.030250" size="0.001" rgba="0 0 0 1"/>
+                    <geom type="sphere" size="0.0225" rgba="0.792157 0.819608 0.933333 1"/>
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link2_z"/>
+                    <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link2_z"/>
+                    <!-- 第3段 -->
+                    <body name="finger_seg3" pos="-0.061205 0 0">
+                      <inertial pos="-0.0103233 3.21209e-06 5.62198e-07" quat="0.5 0.5 0.5 0.5" mass="0.418467" diaginertia="2.479494e-04 1.859620e-04 1.859620e-04"/>
+                      <joint name="joint_ball_3" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                      <!-- 前三角形 (X = -0.03) -->
+                      <site name="tendon_3_a_front_site" pos="-0.049500 0.032620 0.000000" size="0.001" rgba="0 0 0 1"/>
+                      <site name="tendon_3_b_front_site" pos="-0.049500 -0.016310 0.028250" size="0.001" rgba="0 0 0 1"/>
+                      <site name="tendon_3_c_front_site" pos="-0.049500 -0.016310 -0.028250" size="0.001" rgba="0 0 0 1"/>
+                      <!-- 后三角形 (X = 0.03) -->
+                      <site name="tendon_3_a_back_site" pos="-0.016500 0.032620 0.000000" size="0.001" rgba="0 0 0 1"/>
+                      <site name="tendon_3_b_back_site" pos="-0.016500 -0.016310 0.028250" size="0.001" rgba="0 0 0 1"/>
+                      <site name="tendon_3_c_back_site" pos="-0.016500 -0.016310 -0.028250" size="0.001" rgba="0 0 0 1"/>
+                      <geom type="sphere" size="0.021" rgba="0.792157 0.819608 0.933333 1"/>
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link3_z"/>
+                      <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link3_z"/>
+                      <!-- 第4段 -->
+                      <body name="finger_seg4" pos="-0.0571578 0 0">
+                        <inertial pos="-0.00967839 3.82168e-06 5.86592e-07" quat="0.5 0.5 0.5 0.5" mass="0.340821" diaginertia="1.822471e-04 1.366854e-04 1.366854e-04"/>
+                        <joint name="joint_ball_4" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                        <!-- 前三角形 (X = -0.03) -->
+                        <site name="tendon_4_a_front_site" pos="-0.046000 0.030311 0.000000" size="0.001" rgba="0 0 0 1"/>
+                        <site name="tendon_4_b_front_site" pos="-0.046000 -0.015155 0.026250" size="0.001" rgba="0 0 0 1"/>
+                        <site name="tendon_4_c_front_site" pos="-0.046000 -0.015155 -0.026250" size="0.001" rgba="0 0 0 1"/>
+                        <!-- 后三角形 (X = 0.03) -->
+                        <site name="tendon_4_a_back_site" pos="-0.015000 0.030311 0.000000" size="0.001" rgba="0 0 0 1"/>
+                        <site name="tendon_4_b_back_site" pos="-0.015000 -0.015155 0.026250" size="0.001" rgba="0 0 0 1"/>
+                        <site name="tendon_4_c_back_site" pos="-0.015000 -0.015155 -0.026250" size="0.001" rgba="0 0 0 1"/>
+                        <geom type="sphere" size="0.0195" rgba="0.792157 0.819608 0.933333 1"/>
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link4_z"/>
+                        <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link4_z"/>
+                        <!-- 第5段 -->
+                        <body name="finger_seg5" pos="-0.053498 0 0">
+                          <inertial pos="-0.00903423 6.29795e-07 5.87655e-07" quat="0.5 0.5 0.5 0.5" mass="0.279455" diaginertia="1.353128e-04 1.014846e-04 1.014846e-04"/>
+                          <joint name="joint_ball_5" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                          <!-- 前三角形 (X = -0.03) -->
+                          <site name="tendon_5_a_front_site" pos="-0.043000 0.028001 0.000000" size="0.001" rgba="0 0 0 1"/>
+                          <site name="tendon_5_b_front_site" pos="-0.043000 -0.014001 0.024250" size="0.001" rgba="0 0 0 1"/>
+                          <site name="tendon_5_c_front_site" pos="-0.043000 -0.014001 -0.024250" size="0.001" rgba="0 0 0 1"/>
+                          <!-- 后三角形 (X = 0.03) -->
+                          <site name="tendon_5_a_back_site" pos="-0.014500 0.028001 0.000000" size="0.001" rgba="0 0 0 1"/>
+                          <site name="tendon_5_b_back_site" pos="-0.014500 -0.014001 0.024250" size="0.001" rgba="0 0 0 1"/>
+                          <site name="tendon_5_c_back_site" pos="-0.014500 -0.014001 -0.024250" size="0.001" rgba="0 0 0 1"/>
+                          <geom type="sphere" size="0.018" rgba="0.792157 0.819608 0.933333 1"/>
+                          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link5_z"/>
+                          <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link5_z"/>
+                          <!-- 第6段 -->
+                          <body name="finger_seg6" pos="-0.0499495 0 0">
+                            <inertial pos="-0.0084328 1.89801e-07 5.58827e-07" quat="0.5 0.5 0.5 0.5" mass="0.227454" diaginertia="9.936000e-05 7.452000e-05 7.452000e-05"/>
+                            <joint name="joint_ball_6" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                            <!-- 前三角形 (X = -0.03) -->
+                            <site name="tendon_6_a_front_site" pos="-0.039000 0.025692 0.000000" size="0.001" rgba="0 0 0 1"/>
+                            <site name="tendon_6_b_front_site" pos="-0.039000 -0.012846 0.022250" size="0.001" rgba="0 0 0 1"/>
+                            <site name="tendon_6_c_front_site" pos="-0.039000 -0.012846 -0.022250" size="0.001" rgba="0 0 0 1"/>
+                            <!-- 后三角形 (X = 0.03) -->
+                            <site name="tendon_6_a_back_site" pos="-0.013000 0.025692 0.000000" size="0.001" rgba="0 0 0 1"/>
+                            <site name="tendon_6_b_back_site" pos="-0.013000 -0.012846 0.022250" size="0.001" rgba="0 0 0 1"/>
+                            <site name="tendon_6_c_back_site" pos="-0.013000 -0.012846 -0.022250" size="0.001" rgba="0 0 0 1"/>
+                            <geom type="sphere" size="0.0165" rgba="0.792157 0.819608 0.933333 1"/>
+                            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link6_z"/>
+                            <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link6_z"/>
+                            <!-- 第7段 -->
+                            <body name="finger_seg7" pos="-0.0466306 0 0">
+                              <inertial pos="-0.00786976 3.13223e-06 5.64225e-07" quat="0.5 0.5 0.5 0.5" mass="0.185060" diaginertia="7.291889e-05 5.468917e-05 5.468917e-05"/>
+                              <joint name="joint_ball_7" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                              <!-- 前三角形 (X = -0.03) -->
+                              <site name="tendon_7_a_front_site" pos="-0.037000 0.023383 0.000000" size="0.001" rgba="0 0 0 1"/>
+                              <site name="tendon_7_b_front_site" pos="-0.037000 -0.011691 0.020250" size="0.001" rgba="0 0 0 1"/>
+                              <site name="tendon_7_c_front_site" pos="-0.037000 -0.011691 -0.020250" size="0.001" rgba="0 0 0 1"/>
+                              <!-- 后三角形 (X = 0.03) -->
+                              <site name="tendon_7_a_back_site" pos="-0.012000 0.023383 0.000000" size="0.001" rgba="0 0 0 1"/>
+                              <site name="tendon_7_b_back_site" pos="-0.012000 -0.011691 0.020250" size="0.001" rgba="0 0 0 1"/>
+                              <site name="tendon_7_c_back_site" pos="-0.012000 -0.011691 -0.020250" size="0.001" rgba="0 0 0 1"/>
+                              <geom type="sphere" size="0.015" rgba="0.792157 0.819608 0.933333 1"/>
+                              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link7_z"/>
+                              <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link7_z"/>
+                              <!-- 第8段 -->
+                              <body name="finger_seg8" pos="-0.0435252 0 0">
+                                <inertial pos="-0.00734367 2.87354e-06 5.70036e-07" quat="0.5 0.5 0.5 0.5" mass="0.150494" diaginertia="5.347490e-05 4.010617e-05 4.010617e-05"/>
+                                <joint name="joint_ball_8" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                                <!-- 前三角形 (X = -0.03) -->
+                                <site name="tendon_8_a_front_site" pos="-0.035000 0.021073 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                <site name="tendon_8_b_front_site" pos="-0.035000 -0.010537 0.018250" size="0.001" rgba="0 0 0 1"/>
+                                <site name="tendon_8_c_front_site" pos="-0.035000 -0.010537 -0.018250" size="0.001" rgba="0 0 0 1"/>
+                                <!-- 后三角形 (X = 0.03) -->
+                                <site name="tendon_8_a_back_site" pos="-0.011000 0.021073 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                <site name="tendon_8_b_back_site" pos="-0.011000 -0.010537 0.018250" size="0.001" rgba="0 0 0 1"/>
+                                <site name="tendon_8_c_back_site" pos="-0.011000 -0.010537 -0.018250" size="0.001" rgba="0 0 0 1"/>
+                                <geom type="sphere" size="0.0135" rgba="0.792157 0.819608 0.933333 1"/>
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link8_z"/>
+                                <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link8_z"/>
+                                <!-- 第9段 -->
+                                <body name="finger_seg9" pos="-0.040618 0 0">
+                                  <inertial pos="-0.00685046 2.39639e-06 6.85614e-07" quat="0.5 0.5 0.5 0.5" mass="0.122308" diaginertia="3.917901e-05 2.938426e-05 2.938426e-05"/>
+                                  <joint name="joint_ball_9" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                                  <!-- 前三角形 (X = -0.03) -->
+                                  <site name="tendon_9_a_front_site" pos="-0.033000 0.018764 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                  <site name="tendon_9_b_front_site" pos="-0.033000 -0.009382 0.016250" size="0.001" rgba="0 0 0 1"/>
+                                  <site name="tendon_9_c_front_site" pos="-0.033000 -0.009382 -0.016250" size="0.001" rgba="0 0 0 1"/>
+                                  <!-- 后三角形 (X = 0.03) -->
+                                  <site name="tendon_9_a_back_site" pos="-0.010000 0.018764 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                  <site name="tendon_9_b_back_site" pos="-0.010000 -0.009382 0.016250" size="0.001" rgba="0 0 0 1"/>
+                                  <site name="tendon_9_c_back_site" pos="-0.010000 -0.009382 -0.016250" size="0.001" rgba="0 0 0 1"/>
+                                  <geom type="sphere" size="0.012" rgba="0.792157 0.819608 0.933333 1"/>
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link9_z"/>
+                                  <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link9_z"/>
+                                  <!-- 第10段 -->
+                                  <body name="finger_seg10" pos="-0.0378948 0 0">
+                                    <inertial pos="-0.00638852 -2.36473e-06 5.51011e-07" quat="0.5 0.5 0.5 0.5" mass="0.099320" diaginertia="2.866991e-05 2.150243e-05 2.150243e-05"/>
+                                    <joint name="joint_ball_10" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                                    <!-- 前三角形 (X = -0.03) -->
+                                    <site name="tendon_10_a_front_site" pos="-0.030000 0.018187 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                    <site name="tendon_10_b_front_site" pos="-0.030000 -0.009093 0.015750" size="0.001" rgba="0 0 0 1"/>
+                                    <site name="tendon_10_c_front_site" pos="-0.030000 -0.009093 -0.015750" size="0.001" rgba="0 0 0 1"/>
+                                    <!-- 后三角形 (X = 0.03) -->
+                                    <site name="tendon_10_a_back_site" pos="-0.009000 0.018187 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                    <site name="tendon_10_b_back_site" pos="-0.009000 -0.009093 0.015750" size="0.001" rgba="0 0 0 1"/>
+                                    <site name="tendon_10_c_back_site" pos="-0.009000 -0.009093 -0.015750" size="0.001" rgba="0 0 0 1"/>
+                                    <geom type="sphere" size="0.0114" rgba="0.792157 0.819608 0.933333 1"/>
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link10_z"/>
+                                    <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link10_z"/>
+                                    <!-- 第11段 -->
+                                    <body name="finger_seg11" pos="-0.0353434 0 0">
+                                      <inertial pos="-0.00595553 7.95859e-07 5.45029e-07" quat="0.5 0.5 0.5 0.5" mass="0.080580" diaginertia="2.095135e-05 1.571352e-05 1.571352e-05"/>
+                                      <joint name="joint_ball_11" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                                      <!-- 前三角形 (X = -0.03) -->
+                                      <site name="tendon_11_a_front_site" pos="-0.0280000 0.016166 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                      <site name="tendon_11_b_front_site" pos="-0.0280000 -0.008083 0.014000" size="0.001" rgba="0 0 0 1"/>
+                                      <site name="tendon_11_c_front_site" pos="-0.0280000 -0.008083 -0.014000" size="0.001" rgba="0 0 0 1"/>
+                                      <!-- 后三角形 (X = 0.03) -->
+                                      <site name="tendon_11_a_back_site" pos="-0.0080000 0.016166 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                      <site name="tendon_11_b_back_site" pos="-0.0080000 -0.008083 0.014000" size="0.001" rgba="0 0 0 1"/>
+                                      <site name="tendon_11_c_back_site" pos="-0.0080000 -0.008083 -0.014000" size="0.001" rgba="0 0 0 1"/>
+                                      <geom type="sphere" size="0.0108" rgba="0.792157 0.819608 0.933333 1"/>
+                                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link11_z"/>
+                                      <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link11_z"/>
+                                      <!-- 第12段 -->
+                                      <body name="finger_seg12" pos="-0.032951 0 0">
+                                        <inertial pos="-0.00554949 2.19474e-06 5.58528e-07" quat="0.5 0.5 0.5 0.5" mass="0.065299" diaginertia="1.528379e-05 1.146284e-05 1.146284e-05"/>
+                                        <joint name="joint_ball_12" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                                        <!-- 前三角形 (X = -0.03) -->
+                                        <site name="tendon_12_a_front_site" pos="-0.026500 0.014722 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                        <site name="tendon_12_b_front_site" pos="-0.026500 -0.007361 0.012750" size="0.001" rgba="0 0 0 1"/>
+                                        <site name="tendon_12_c_front_site" pos="-0.026500 -0.007361 -0.012750" size="0.001" rgba="0 0 0 1"/>
+                                        <!-- 后三角形 (X = 0.03) -->
+                                        <site name="tendon_12_a_back_site" pos="-0.008000 0.014722 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                        <site name="tendon_12_b_back_site" pos="-0.008000 -0.007361 0.012750" size="0.001" rgba="0 0 0 1"/>
+                                        <site name="tendon_12_c_back_site" pos="-0.008000 -0.007361 -0.012750" size="0.001" rgba="0 0 0 1"/>
+                                        <geom type="sphere" size="0.0102" rgba="0.792157 0.819608 0.933333 1"/>
+                                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link12_z"/>
+                                        <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link12_z"/>
+                                        <!-- 第13段 -->
+                                        <body name="finger_seg13" pos="-0.0307064 0 0">
+                                          <inertial pos="-0.00516889 2.05447e-06 5.90848e-07" quat="0.5 0.5 0.5 0.5" mass="0.052843" diaginertia="1.112634e-05 8.344756e-06 8.344756e-06"/>
+                                          <joint name="joint_ball_13" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                                          <!-- 前三角形 (X = -0.03) -->
+                                          <site name="tendon_13_a_front_site" pos="-0.025000 0.013279 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                          <site name="tendon_13_b_front_site" pos="-0.025000 -0.006640 0.011500" size="0.001" rgba="0 0 0 1"/>
+                                          <site name="tendon_13_c_front_site" pos="-0.025000 -0.006640 -0.011500" size="0.001" rgba="0 0 0 1"/>
+                                          <!-- 后三角形 (X = 0.03) -->
+                                          <site name="tendon_13_a_back_site" pos="-0.007000 0.013279 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                          <site name="tendon_13_b_back_site" pos="-0.007000 -0.006640 0.011500" size="0.001" rgba="0 0 0 1"/>
+                                          <site name="tendon_13_c_back_site" pos="-0.007000 -0.006640 -0.011500" size="0.001" rgba="0 0 0 1"/>
+                                          <geom type="sphere" size="0.0096" rgba="0.792157 0.819608 0.933333 1"/>
+                                          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link13_z"/>
+                                          <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link13_z"/>
+                                          <!-- 第14段 -->
+                                          <body name="finger_seg14" pos="-0.0284493 0 0">
+                                            <inertial pos="-0.0047618 1.89523e-06 6.80555e-07" quat="0.5 0.5 0.5 0.5" mass="0.042026" diaginertia="7.891295e-06 5.918471e-06 5.918471e-06"/>
+                                            <joint name="joint_ball_14" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                                            <!-- 前三角形 (X = -0.03) -->
+                                            <site name="tendon_14_a_front_site" pos="-0.022000 0.011836 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                            <site name="tendon_14_b_front_site" pos="-0.022000 -0.005918 0.010250" size="0.001" rgba="0 0 0 1"/>
+                                            <site name="tendon_14_c_front_site" pos="-0.022000 -0.005918 -0.010250" size="0.001" rgba="0 0 0 1"/>
+                                            <!-- 后三角形 (X = 0.03) -->
+                                            <site name="tendon_14_a_back_site" pos="-0.006000 0.011836 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                            <site name="tendon_14_b_back_site" pos="-0.006000 -0.005918 0.010250" size="0.001" rgba="0 0 0 1"/>
+                                            <site name="tendon_14_c_back_site" pos="-0.006000 -0.005918 -0.010250" size="0.001" rgba="0 0 0 1"/>
+                                            <geom type="sphere" size="0.009" rgba="0.792157 0.819608 0.933333 1"/>
+                                            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link14_z"/>
+                                            <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link14_z"/>
+                                            <!-- 第15段 -->
+                                            <body name="finger_seg15" pos="-0.0261699 0 0">
+                                              <inertial pos="-0.00437647 1.75784e-06 6.91919e-07" quat="0.5 0.5 0.5 0.5" mass="0.032712" diaginertia="5.419158e-06 4.064369e-06 4.064369e-06"/>
+                                              <joint name="joint_ball_15" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                                              <!-- 前三角形 (X = -0.03) -->
+                                              <site name="tendon_15_a_front_site" pos="-0.020000 0.010681 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                              <site name="tendon_15_b_front_site" pos="-0.020000 -0.005340 0.009250" size="0.001" rgba="0 0 0 1"/>
+                                              <site name="tendon_15_c_front_site" pos="-0.020000 -0.005340 -0.009250" size="0.001" rgba="0 0 0 1"/>
+                                              <!-- 后三角形 (X = 0.03) -->
+                                              <site name="tendon_15_a_back_site" pos="-0.006000 0.010681 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                              <site name="tendon_15_b_back_site" pos="-0.006000 -0.005340 0.009250" size="0.001" rgba="0 0 0 1"/>
+                                              <site name="tendon_15_c_back_site" pos="-0.006000 -0.005340 -0.009250" size="0.001" rgba="0 0 0 1"/>
+                                              <geom type="sphere" size="0.0084" rgba="0.792157 0.819608 0.933333 1"/>
+                                              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link15_z"/>
+                                              <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link15_z"/>
+                                              <!-- 第16段 -->
+                                              <body name="finger_seg16" pos="-0.0240093 0 0">
+                                                <inertial pos="-0.00401118 1.65161e-06 6.73107e-07" quat="0.5 0.5 0.5 0.5" mass="0.025260" diaginertia="3.677234e-06 2.757925e-06 2.757925e-06"/>
+                                                <joint name="joint_ball_16" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                                                <!-- 前三角形 (X = -0.03) -->
+                                                <site name="tendon_16_a_front_site" pos="-0.019000 0.009815 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                                <site name="tendon_16_b_front_site" pos="-0.019000 -0.004907 0.008500" size="0.001" rgba="0 0 0 1"/>
+                                                <site name="tendon_16_c_front_site" pos="-0.019000 -0.004907 -0.008500" size="0.001" rgba="0 0 0 1"/>
+                                                <!-- 后三角形 (X = 0.03) -->
+                                                <site name="tendon_16_a_back_site" pos="-0.004500 0.009815 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                                <site name="tendon_16_b_back_site" pos="-0.004500 -0.004907 0.008500" size="0.001" rgba="0 0 0 1"/>
+                                                <site name="tendon_16_c_back_site" pos="-0.004500 -0.004907 -0.008500" size="0.001" rgba="0 0 0 1"/>
+                                                <geom type="sphere" size="0.0078" rgba="0.792157 0.819608 0.933333 1"/>
+                                                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link16_z"/>
+                                                <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link16_z"/>
+                                                <!-- 第17段 -->
+                                                <body name="finger_seg17" pos="-0.0218088 0 0">
+                                                  <inertial pos="-0.00361469 1.56178e-06 6.73864e-07" quat="0.5 0.5 0.5 0.5" mass="0.018932" diaginertia="2.385975e-06 1.789481e-06 1.789481e-06"/>
+                                                  <joint name="joint_ball_17" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                                                  <!-- 前三角形 (X = -0.03) -->
+                                                  <site name="tendon_17_a_front_site" pos="-0.017000 0.009180 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                                  <site name="tendon_17_b_front_site" pos="-0.017000 -0.004590 0.007950" size="0.001" rgba="0 0 0 1"/>
+                                                  <site name="tendon_17_c_front_site" pos="-0.017000 -0.004590 -0.007950" size="0.001" rgba="0 0 0 1"/>
+                                                  <!-- 后三角形 (X = 0.03) -->
+                                                  <site name="tendon_17_a_back_site" pos="-0.005000 0.009180 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                                  <site name="tendon_17_b_back_site" pos="-0.005000 -0.004590 0.007950" size="0.001" rgba="0 0 0 1"/>
+                                                  <site name="tendon_17_c_back_site" pos="-0.005000 -0.004590 -0.007950" size="0.001" rgba="0 0 0 1"/>
+                                                  <geom type="sphere" size="0.0072" rgba="0.792157 0.819608 0.933333 1"/>
+                                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link17_z"/>
+                                                  <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link17_z"/>
+                                                  <!-- 第18段 -->
+                                                  <body name="finger_seg18" pos="-0.019711 0 0">
+                                                    <inertial pos="-0.00328625 1.46252e-06 6.73719e-07" quat="0.5 0.5 0.5 0.5" mass="0.013977" diaginertia="1.513534e-06 1.135150e-06 1.135150e-06"/>
+                                                    <joint name="joint_ball_18" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                                                    <!-- 前三角形 (X = -0.03) -->
+                                                    <site name="tendon_18_a_front_site" pos="-0.015000 0.008545 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                                    <site name="tendon_18_b_front_site" pos="-0.015000 -0.004272 0.007400" size="0.001" rgba="0 0 0 1"/>
+                                                    <site name="tendon_18_c_front_site" pos="-0.015000 -0.004272 -0.007400" size="0.001" rgba="0 0 0 1"/>
+                                                    <!-- 后三角形 (X = 0.03) -->
+                                                    <site name="tendon_18_a_back_site" pos="-0.004500 0.008545 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                                    <site name="tendon_18_b_back_site" pos="-0.004500 -0.004272 0.007400" size="0.001" rgba="0 0 0 1"/>
+                                                    <site name="tendon_18_c_back_site" pos="-0.004500 -0.004272 -0.007400" size="0.001" rgba="0 0 0 1"/>
+                                                    <geom type="sphere" size="0.0066" rgba="0.792157 0.819608 0.933333 1"/>
+                                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link18_z"/>
+                                                    <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link18_z"/>
+                                                    <!-- 第19段 -->
+                                                    <body name="finger_seg19" pos="-0.0180085 0 0">
+                                                      <inertial pos="-0.00302487 1.39313e-06 6.62075e-07" quat="0.5 0.5 0.5 0.5" mass="0.010659" diaginertia="1.007966e-06 7.559745e-07 7.559745e-07"/>
+                                                      <joint name="joint_ball_19" type="ball" pos="0 0 0" range="0 0.59" damping="5"/>
+                                                      <!-- 前三角形 (X = -0.03) -->
+                                                      <site name="tendon_19_a_front_site" pos="-0.015000 0.007910 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                                      <site name="tendon_19_b_front_site" pos="-0.015000 -0.003955 0.006850" size="0.001" rgba="0 0 0 1"/>
+                                                      <site name="tendon_19_c_front_site" pos="-0.015000 -0.003955 -0.006850" size="0.001" rgba="0 0 0 1"/>
+                                                      <!-- 后三角形 (X = 0.03) -->
+                                                      <site name="tendon_19_a_back_site" pos="-0.004300 0.007910 0.000000" size="0.001" rgba="0 0 0 1"/>
+                                                      <site name="tendon_19_b_back_site" pos="-0.004300 -0.003955 0.006850" size="0.001" rgba="0 0 0 1"/>
+                                                      <site name="tendon_19_c_back_site" pos="-0.004300 -0.003955 -0.006850" size="0.001" rgba="0 0 0 1"/>
+                                                      <geom type="sphere" size="0.006" rgba="0.792157 0.819608 0.933333 1"/>
+                                                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792157 0.819608 0.933333 1" mesh="link19_z"/>
+                                                      <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="link19_z"/>
+                                                    </body>
+                                                  </body>
+                                                </body>
+                                              </body>
+                                            </body>
+                                          </body>
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    </body>
+  </worldbody>
+  <tendon>
+    <spatial name="tendon_a">
+      <site site="tendon_0_a_site"/>
+      <site site="tendon_1_a_front_site"/>
+      <site site="tendon_1_a_back_site"/>
+      <site site="tendon_2_a_front_site"/>
+      <site site="tendon_2_a_back_site"/>
+      <site site="tendon_3_a_front_site"/>
+      <site site="tendon_3_a_back_site"/>
+      <site site="tendon_4_a_front_site"/>
+      <site site="tendon_4_a_back_site"/>
+      <site site="tendon_5_a_front_site"/>
+      <site site="tendon_5_a_back_site"/>
+      <site site="tendon_6_a_front_site"/>
+      <site site="tendon_6_a_back_site"/>
+      <site site="tendon_7_a_front_site"/>
+      <site site="tendon_7_a_back_site"/>
+      <site site="tendon_8_a_front_site"/>
+      <site site="tendon_8_a_back_site"/>
+      <site site="tendon_9_a_front_site"/>
+      <site site="tendon_9_a_back_site"/>
+      <site site="tendon_10_a_front_site"/>
+      <site site="tendon_10_a_back_site"/>
+      <site site="tendon_11_a_front_site"/>
+      <site site="tendon_11_a_back_site"/>
+      <site site="tendon_12_a_front_site"/>
+      <site site="tendon_12_a_back_site"/>
+      <site site="tendon_13_a_front_site"/>
+      <site site="tendon_13_a_back_site"/>
+      <site site="tendon_14_a_front_site"/>
+      <site site="tendon_14_a_back_site"/>
+      <site site="tendon_15_a_front_site"/>
+      <site site="tendon_15_a_back_site"/>
+      <site site="tendon_16_a_front_site"/>
+      <site site="tendon_16_a_back_site"/>
+      <site site="tendon_17_a_front_site"/>
+      <site site="tendon_17_a_back_site"/>
+      <site site="tendon_18_a_front_site"/>
+      <site site="tendon_18_a_back_site"/>
+      <site site="tendon_19_a_front_site"/>
+      <site site="tendon_19_a_back_site"/>
+    </spatial>
+    <spatial name="tendon_b">
+      <site site="tendon_0_b_site"/>
+      <site site="tendon_1_b_front_site"/>
+      <site site="tendon_1_b_back_site"/>
+      <site site="tendon_2_b_front_site"/>
+      <site site="tendon_2_b_back_site"/>
+      <site site="tendon_3_b_front_site"/>
+      <site site="tendon_3_b_back_site"/>
+      <site site="tendon_4_b_front_site"/>
+      <site site="tendon_4_b_back_site"/>
+      <site site="tendon_5_b_front_site"/>
+      <site site="tendon_5_b_back_site"/>
+      <site site="tendon_6_b_front_site"/>
+      <site site="tendon_6_b_back_site"/>
+      <site site="tendon_7_b_front_site"/>
+      <site site="tendon_7_b_back_site"/>
+      <site site="tendon_8_b_front_site"/>
+      <site site="tendon_8_b_back_site"/>
+      <site site="tendon_9_b_front_site"/>
+      <site site="tendon_9_b_back_site"/>
+      <site site="tendon_10_b_front_site"/>
+      <site site="tendon_10_b_back_site"/>
+      <site site="tendon_11_b_front_site"/>
+      <site site="tendon_11_b_back_site"/>
+      <site site="tendon_12_b_front_site"/>
+      <site site="tendon_12_b_back_site"/>
+      <site site="tendon_13_b_front_site"/>
+      <site site="tendon_13_b_back_site"/>
+      <site site="tendon_14_b_front_site"/>
+      <site site="tendon_14_b_back_site"/>
+      <site site="tendon_15_b_front_site"/>
+      <site site="tendon_15_b_back_site"/>
+      <site site="tendon_16_b_front_site"/>
+      <site site="tendon_16_b_back_site"/>
+      <site site="tendon_17_b_front_site"/>
+      <site site="tendon_17_b_back_site"/>
+      <site site="tendon_18_b_front_site"/>
+      <site site="tendon_18_b_back_site"/>
+      <site site="tendon_19_b_front_site"/>
+      <site site="tendon_19_b_back_site"/>
+    </spatial>
+    <spatial name="tendon_c">
+      <site site="tendon_0_c_site"/>
+      <site site="tendon_1_c_front_site"/>
+      <site site="tendon_1_c_back_site"/>
+      <site site="tendon_2_c_front_site"/>
+      <site site="tendon_2_c_back_site"/>
+      <site site="tendon_3_c_front_site"/>
+      <site site="tendon_3_c_back_site"/>
+      <site site="tendon_4_c_front_site"/>
+      <site site="tendon_4_c_back_site"/>
+      <site site="tendon_5_c_front_site"/>
+      <site site="tendon_5_c_back_site"/>
+      <site site="tendon_6_c_front_site"/>
+      <site site="tendon_6_c_back_site"/>
+      <site site="tendon_7_c_front_site"/>
+      <site site="tendon_7_c_back_site"/>
+      <site site="tendon_8_c_front_site"/>
+      <site site="tendon_8_c_back_site"/>
+      <site site="tendon_9_c_front_site"/>
+      <site site="tendon_9_c_back_site"/>
+      <site site="tendon_10_c_front_site"/>
+      <site site="tendon_10_c_back_site"/>
+      <site site="tendon_11_c_front_site"/>
+      <site site="tendon_11_c_back_site"/>
+      <site site="tendon_12_c_front_site"/>
+      <site site="tendon_12_c_back_site"/>
+      <site site="tendon_13_c_front_site"/>
+      <site site="tendon_13_c_back_site"/>
+      <site site="tendon_14_c_front_site"/>
+      <site site="tendon_14_c_back_site"/>
+      <site site="tendon_15_c_front_site"/>
+      <site site="tendon_15_c_back_site"/>
+      <site site="tendon_16_c_front_site"/>
+      <site site="tendon_16_c_back_site"/>
+      <site site="tendon_17_c_front_site"/>
+      <site site="tendon_17_c_back_site"/>
+      <site site="tendon_18_c_front_site"/>
+      <site site="tendon_18_c_back_site"/>
+      <site site="tendon_19_c_front_site"/>
+      <site site="tendon_19_c_back_site"/>
+    </spatial>
+  </tendon>
+  <actuator>
+    <!-- 机械臂驱动器 -->
+    <position name="actuator_joint_1" joint="joint_1" kp="2000" kv="200" ctrlrange="-6.28 6.28"/>
+    <position name="actuator_joint_2" joint="joint_2" kp="4000" kv="400" ctrlrange="-1.48 4.62"/>
+    <position name="actuator_joint_3" joint="joint_3" kp="3000" kv="300" ctrlrange="-3.05 3.05"/>
+    <position name="actuator_joint_4" joint="joint_4" kp="2000" kv="200" ctrlrange="-1.48 4.62"/>
+    <position name="actuator_joint_5" joint="joint_5" kp="800" kv="80" ctrlrange="-6.28 6.28"/>
+    <!-- joint_6 驱动器已禁用：position驱动器求解复杂，仿真软件无法完成，导致关节不可控抖动。尝试多种kp/kv参数（500/100, 100/50, 50/20）均无效。建议改用motor驱动器或直接力控模式 -->
+    <!-- <position name="actuator_joint_6" joint="joint_6" kp="50" kv="20" ctrlrange="-6.28 6.28"/> -->
+    <!-- 线驱肌腱驱动器：控制线长 -->
+    <!-- 使用 motor 驱动器：ctrl=0为无力状态（自然伸直），正负施加拉力 -->
+    <motor name="actuator_tendon_a" tendon="tendon_a" ctrlrange="-100 100"/>
+    <motor name="actuator_tendon_b" tendon="tendon_b" ctrlrange="-100 100"/>
+    <motor name="actuator_tendon_c" tendon="tendon_c" ctrlrange="-100 100"/>
+  </actuator>
+</mujoco>

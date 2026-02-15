@@ -171,6 +171,26 @@ def brax_ppo_config(
         policy_obs_key="state",
         value_obs_key="privileged_state",
     )
+  elif env_name == "SpirobotSwingCup":
+    # Migrated from PKU Bi-DexHands
+    # Dual arm collaborative cup rotation task
+    rl_config.num_timesteps = 50_000_000
+    rl_config.num_evals = 10
+    rl_config.num_minibatches = 32
+    rl_config.unroll_length = 20
+    rl_config.num_updates_per_batch = 4
+    rl_config.discounting = 0.97
+    rl_config.learning_rate = 3e-4
+    rl_config.entropy_cost = 1e-2
+    rl_config.num_envs = 2048
+    rl_config.batch_size = 256
+    rl_config.num_resets_per_eval = 1
+    rl_config.network_factory = config_dict.create(
+        policy_hidden_layer_sizes=(256, 256, 256),
+        value_hidden_layer_sizes=(256, 256, 256),
+        policy_obs_key="state",
+        value_obs_key="state",
+    )
   else:
     raise ValueError(f"Unsupported env: {env_name}")
 

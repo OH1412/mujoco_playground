@@ -98,6 +98,7 @@ packages = ["mujoco_playground", "learning"]
 [project.scripts]
 train-jax-ppo = "learning.train_jax_ppo:run"
 train-rsl-ppo = "learning.train_rsl_rl:run"
+train-with-viewer = "learning.train_with_viewer:run"
 
 [tool.ruff]
 lint.select = [
