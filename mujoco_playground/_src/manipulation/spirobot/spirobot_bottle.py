@@ -327,13 +327,13 @@ class SpirobotBottle(mjx_env.MjxEnv):
         local_pos = quat_rotate(bottle_quat_inv, rel_pos)
         local_xz = local_pos[:, [0, 2]]
         
-        # 【修改1.1：添加闭合操作】
+        # 添加闭合操作
         local_xz_closed = jp.concatenate([local_xz, local_xz[0:1]], axis=0) 
         thetas = jp.arctan2(local_xz_closed[:, 1], local_xz_closed[:, 0])
         dtheta = thetas[1:] - thetas[:-1]
         dtheta = (dtheta + jp.pi) % (2 * jp.pi) - jp.pi
         
-        # 【修改1.2：分别算出闭合和开口角度】
+        # 分别算出闭合和开口角度
         closed_theta_total = jp.sum(dtheta)
         open_theta_total = jp.abs(jp.sum(dtheta[:-1]))
         
@@ -345,7 +345,7 @@ class SpirobotBottle(mjx_env.MjxEnv):
             bottle_pos, bottle_vel, bottle_angvel, bottle_quat,
             goal_pos,
             ee_to_bottle, ee_to_hover, bottle_to_goal,
-            # 【修改1.3：把两个核心状态传给网络】
+            # 把两个核心状态传给网络
             jp.array([closed_theta_total, open_theta_total]),
         ])
 
@@ -384,12 +384,12 @@ class SpirobotBottle(mjx_env.MjxEnv):
         # 3. 在本地 XZ 平面上计算累计卷绕角（瓶轴在本地 Y）
         # use plain Python list for static slicing, avoids tracer issues
         local_xz = local_pos[:, [0, 2]]
-        # 【修改2.1：补回首尾相连的防作弊闭合逻辑】
+        # 补回首尾相连的防作弊闭合逻辑
         local_xz_closed = jp.concatenate([local_xz, local_xz[0:1]], axis=0) 
         thetas = jp.arctan2(local_xz_closed[:, 1], local_xz_closed[:, 0])
         dtheta = thetas[1:] - thetas[:-1]
         dtheta = (dtheta + jp.pi) % (2.0 * jp.pi) - jp.pi
-        # 【修改2.2：定义好 closed 和 open 两个变量，防止 NameError】
+        # 定义好 closed 和 open 两个变量，防止 NameError
         closed_theta_total = jp.sum(dtheta)
         open_theta_total = jp.abs(jp.sum(dtheta[:-1]))
 
@@ -397,9 +397,9 @@ class SpirobotBottle(mjx_env.MjxEnv):
         is_height_valid = jp.mean(jp.abs(local_pos[:, 1])) < 0.1
         local_radii = jp.linalg.norm(local_xz, axis=-1)
         is_radius_valid = jp.mean(jp.abs(local_radii - 0.03)) < 0.05
-        # 【修改2.3：加上严格的拓扑判断，确保瓶子在中间】
+        # 加上严格的拓扑判断，确保瓶子在中间
         is_inside = jp.abs(closed_theta_total) > 3.0
-        # 【修改2.4：将 is_inside 纳入真理之门判定】
+        # 将 is_inside 纳入判定
         is_valid_wrap = is_macro_close & is_height_valid & is_radius_valid & is_inside
 
         # wrap 同 debug_env：r_wrap_dense 只要求 macro_close & height_valid
