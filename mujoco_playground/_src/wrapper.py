@@ -152,6 +152,12 @@ class BraxAutoResetWrapper(Wrapper):
     self._info_key = 'AutoResetWrapper'
 
   def reset(self, rng: jax.Array) -> mjx_env.State:
+    # Brax expects a batch of RNG keys, but sometimes we receive a single
+    # key of shape (2,) or a scalar. Normalize so that `rng` is always
+    # a batch of keys with leading dimension >=1.
+    # For shape () or (2,) produce an array of shape (1,2).
+    if rng.ndim == 0 or (rng.ndim == 1 and rng.shape[-1] == 2):
+      rng = jax.random.split(rng, 1)
     rng_key = jax.vmap(jax.random.split)(rng)
     rng, key = rng_key[..., 0], rng_key[..., 1]
     state = self.env.reset(key)
@@ -166,7 +172,11 @@ class BraxAutoResetWrapper(Wrapper):
   def step(self, state: mjx_env.State, action: jax.Array) -> mjx_env.State:
     # grab the reset state.
     reset_state = None
-    rng_key = jax.vmap(jax.random.split)(state.info[f'{self._info_key}_rng'])
+    # ensure RNG batch dimension exists
+    rngval = state.info[f'{self._info_key}_rng']
+    if rngval.ndim == 0 or (rngval.ndim == 1 and rngval.shape[-1] == 2):
+      rngval = jax.random.split(rngval, 1)
+    rng_key = jax.vmap(jax.random.split)(rngval)
     reset_rng, reset_key = rng_key[..., 0], rng_key[..., 1]
     if self._full_reset:
       reset_state = self.reset(reset_key)

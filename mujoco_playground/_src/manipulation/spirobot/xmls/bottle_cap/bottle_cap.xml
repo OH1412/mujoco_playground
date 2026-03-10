@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<mujoco model="bottle_cap">
+  <compiler angle="radian" meshdir="textured_objs"/>
+  
+  <asset>
+    <mesh name="mesh-2" file="original-2.obj" scale="0.15 0.15 0.15"/>
+    <mesh name="mesh-3" file="original-3.obj" scale="0.15 0.15 0.15"/>
+    <mesh name="mesh-4" file="original-4.obj" scale="0.15 0.15 0.15"/>
+    <mesh name="mesh-5" file="original-5.obj" scale="0.15 0.15 0.15"/>
+    <mesh name="mesh-6" file="original-6.obj" scale="0.15 0.15 0.15"/>
+    <mesh name="mesh-7" file="original-7.obj" scale="0.15 0.15 0.15"/>
+    <mesh name="mesh-8" file="original-8.obj" scale="0.15 0.15 0.15"/>
+    <!-- texture & material from URDF .mtl -->
+    <texture name="tex0" file="images/texture_0.png" type="2d"/>
+    <material name="mat0" texture="tex0" texuniform="true"/>
+  </asset>
+
+  <worldbody>
+    <!-- 给瓶子 base 添加自由关节并设置单位四元数使其直立126 -->
+    <body name="base" pos="0.5 -0.8 0.13" quat="0.7071 0.7071 0 0">
+      <joint name="base_free" type="free"/>
+      <body name="cap">
+        <!-- <joint name="cap_joint" type="hinge" axis="0 1 0" range="-3.14159 3.14159" damping="0.01"/> -->
+        <geom name="cap_10" type="mesh" mesh="mesh-7" pos="-0.000 -0.000 -0.000" friction="0.5" material="mat0"/>
+      </body>
+      
+      <body name="body">
+        <geom name="body_40" type="mesh" mesh="mesh-4" pos="0 0 0" friction="0.5" material="mat0"/>
+        <geom name="body_30" type="mesh" mesh="mesh-3" pos="0 0 0" friction="0.5" material="mat0"/>
+        <geom name="body_80" type="mesh" mesh="mesh-8" pos="0 0 0" friction="0.5" material="mat0"/>
+        <geom name="body_60" type="mesh" mesh="mesh-6" pos="0 0 0" friction="0.5" material="mat0"/>
+        <!-- seal mesh from URDF (original-5) -->
+        <geom name="body_50" type="mesh" mesh="mesh-5" pos="0 0 0" friction="0.5" material="mat0"/>
+        <geom name="body_20" type="mesh" mesh="mesh-2" pos="0 0 0" friction="0.5" material="mat0"/>
+      </body>
+    </body>
+  </worldbody>
+
+</mujoco>

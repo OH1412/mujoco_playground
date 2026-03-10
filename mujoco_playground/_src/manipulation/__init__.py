@@ -29,7 +29,13 @@ from mujoco_playground._src.manipulation.franka_emika_panda_robotiq import push_
 from mujoco_playground._src.manipulation.leap_hand import reorient as leap_cube_reorient
 from mujoco_playground._src.manipulation.leap_hand import rotate_z as leap_rotate_z
 from mujoco_playground._src.manipulation.aero_hand import rotate_z as aero_hand_rotate_z
-from mujoco_playground._src.manipulation.spirobot_swing_cup import swing_cup as spirobot_swing_cup
+# spirobot utilities stored under the `spirobot` subpackage.
+# Relative import from that subpackage ensures names resolve correctly
+from .spirobot.spirobot_bottle import (
+    default_config as spirobot_bottle_config,
+    domain_randomize as spirobot_bottle_randomize,
+    SpirobotBottle,
+)
 
 _envs = {
     "AlohaHandOver": aloha_handover.HandOver,
@@ -42,7 +48,7 @@ _envs = {
     "LeapCubeReorient": leap_cube_reorient.CubeReorient,
     "LeapCubeRotateZAxis": leap_rotate_z.CubeRotateZAxis,
     "AeroCubeRotateZAxis": aero_hand_rotate_z.CubeRotateZAxis,
-    "SpirobotSwingCup": spirobot_swing_cup.SpirobotSwingCup,
+    "SpirobotBottle": SpirobotBottle,
 }
 
 _cfgs = {
@@ -56,14 +62,14 @@ _cfgs = {
     "LeapCubeReorient": leap_cube_reorient.default_config,
     "LeapCubeRotateZAxis": leap_rotate_z.default_config,
     "AeroCubeRotateZAxis": aero_hand_rotate_z.default_config,
-    "SpirobotSwingCup": spirobot_swing_cup.default_config,
+    "SpirobotBottle": spirobot_bottle_config,
 }
 
 _randomizer = {
     "LeapCubeRotateZAxis": leap_rotate_z.domain_randomize,
     "LeapCubeReorient": leap_cube_reorient.domain_randomize,
     "AeroCubeRotateZAxis": aero_hand_rotate_z.domain_randomize,
-    "SpirobotSwingCup": spirobot_swing_cup.domain_randomize,
+    "SpirobotBottle": spirobot_bottle_randomize,
 }
 
 
