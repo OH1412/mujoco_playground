@@ -171,6 +171,19 @@ def brax_ppo_config(
         policy_obs_key="state",
         value_obs_key="privileged_state",
     )
+  elif env_name == "SpirobotBottle":
+    # basic default settings for the Spirobot bottle task; tune as needed
+    rl_config.num_timesteps = 20_000_000
+    rl_config.num_evals = 5
+    rl_config.unroll_length = 20
+    rl_config.num_minibatches = 8
+    rl_config.num_updates_per_batch = 8
+    rl_config.discounting = 0.97
+    rl_config.learning_rate = 5e-4
+    rl_config.entropy_cost = 1e-2
+    rl_config.num_envs = 1024
+    rl_config.batch_size = 256
+    # (no special network modifications)
   # env_name == "Spirobot" configuration removed (not part of library)
   else:
     raise ValueError(f"Unsupported env: {env_name}")

@@ -300,6 +300,25 @@ def main(argv):
   logdir.mkdir(parents=True, exist_ok=True)
   print(f"Logs are being stored in: {logdir}")
 
+  # helper to convert JAX arrays to plain Python types
+  def _serialize_for_json(obj):
+    import numpy as _np
+    # recursion over containers
+    if isinstance(obj, dict):
+      return {k: _serialize_for_json(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+      return type(obj)(_serialize_for_json(v) for v in obj)
+    try:
+      # jax.Array has .tolist
+      import jax
+      if isinstance(obj, jax.Array):
+        return _np.array(obj).tolist()
+    except ImportError:
+      pass
+    if isinstance(obj, _np.ndarray):
+      return obj.tolist()
+    return obj
+
   # Initialize Weights & Biases if required
   if _USE_WANDB.value and not _PLAY_ONLY.value:
     if wandb is None:
@@ -308,7 +327,7 @@ def main(argv):
           "Install via: pip install wandb"
       )
     wandb.init(project="mjxrl", name=exp_name)
-    wandb.config.update(env_cfg.to_dict())
+    wandb.config.update(_serialize_for_json(env_cfg.to_dict()))
     wandb.config.update({"env_name": _ENV_NAME.value})
 
   # Initialize TensorBoard if required
@@ -338,9 +357,9 @@ def main(argv):
   ckpt_path.mkdir(parents=True, exist_ok=True)
   print(f"Checkpoint path: {ckpt_path}")
 
-  # Save environment configuration
+  # Save environment configuration (convert arrays to lists)
   with open(ckpt_path / "config.json", "w", encoding="utf-8") as fp:
-    json.dump(env_cfg.to_dict(), fp, indent=4)
+    json.dump(_serialize_for_json(env_cfg.to_dict()), fp, indent=4)
 
   training_params = dict(ppo_params)
   if "network_factory" in training_params:
