@@ -41,28 +41,51 @@
 
 ---
 
-## 训练脚本：`learning/train_spirobot.py`
+## 训练脚本：通用 JAX‑PPO 驱动 `learning/train_jax_ppo.py`
 
-训练/推理脚本封装了 Brax/PPO 训练管线。
+仓库提供了一个通用训练程序 `learning/train_jax_ppo.py`，可以用于
+任何注册到 `mujoco_playground.registry` 的环境，包括 `SpirobotBottle`。
+该脚本封装了 Brax/PPO 训练管线，并在内部自动处理多设备并行。
 
 主要功能：
 
-1. 定义命令行旗标（训练步数、并行环境、网络结构、日志选项等）。
-2. 加载环境（通过 `wrapper.wrap_for_brax_training`）。
-3. 设置 TensorBoard/W&B 日志，可在回调中导出模型参数。
-4. 调用 `ppo.train(...)` 执行训练，并返回 inference 函数。
-5. 如 `--play_only`，直接进行推理并生成视频。
+1. 使用 `absl.flags` 定义丰富的命令行选项（环境名称、训练步数、
+   并行环境数、网络结构、日志设置等）。
+2. 通过 `registry.load()` 创建所选环境，并根据 `--vision` 或
+   `--domain_randomization` 自动应用 `wrapper.wrap_for_brax_training`。
+3. 支持 TensorBoard 和 W&B 日志，以及可选的 rscope 可视化。
+4. 调用 `brax.training.agents.ppo.train` 执行训练，返回 inference 函数和参数。
+5. 提供 `--play_only` 模式进行推理并生成演示视频。
+6. 自动检测 `jax.local_device_count()` 并按设备数分配环境；可通过
+   `--per_device_envs` 或直接设置 `--num_envs` 来控制总并行数。
 
-示例用法：
+使用示例：
 ```bash
-# 训练 50 万步
-python learning/train_spirobot.py --num_timesteps 500000 --num_envs 256
+# 训练 SpirobotBottle 环境，单卡 512 并行环境
+python learning/train_jax_ppo.py \
+    --env_name=SpirobotBottle \
+    --num_timesteps=500000 \
+    --num_envs=512 \
+    --batch_size=256 \
+    --use_tb
 
-# 仅查看效果
-python learning/train_spirobot.py --play_only --num_videos 5
+# 在 4 块 GPU 上每卡 512 env（总共 2048 env）
+export CUDA_VISIBLE_DEVICES=0,1,2,3
+python learning/train_jax_ppo.py \
+    --env_name=SpirobotBottle \
+    --num_envs=2048 \
+    --batch_size=512
+
+# 只播放模型（不训练）
+python learning/train_jax_ppo.py --env_name=SpirobotBottle --play_only --num_videos=5
 ```
 
-可通过修改 `progress` 回调实现中途 checkpoint 存储。
+如需 checkpoint 存储、恢复、超参数调整等，可利用标准标志，
+脚本会把日志和检查点写到 `logs/<env>-<timestamp>` 目录。
+
+如果确定只想训练这个任务，可以继续使用原来的
+`train_spirobot.py`（它只是 `train_jax_ppo.py` 的简化版本），
+否则建议首选通用脚本，因为它能更轻松利用多 GPU 并适配其他环境。
 
 ---
 
